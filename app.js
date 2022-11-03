@@ -1,6 +1,6 @@
 
-const fileToTransformPath = './file3.csv'
-const fileToTransformName = 'file3'
+const fileToTransformPath = 'sample.csv'
+const fileToTransformName = 'sample'
 
 const {  createHash } = require('crypto')
 const createCsv = require('csvtojson')
@@ -95,7 +95,7 @@ function transformCSV( count )
 // Start 
 const generatedJson = convertCsvFileToJson( fileToTransformPath ) 
 const jsonHash = generateHash('sha256', generatedJson.toString() )
-const generatedArrayFromFile = divideLinesInFileIntoAnArray('file3.csv')
+const generatedArrayFromFile = divideLinesInFileIntoAnArray( fileToTransformPath )
 
 transformCSV( generatedArrayFromFile.length )
 writeArrayToCsv( generatedArrayFromFile, fileToTransformName + '.output.csv' )
